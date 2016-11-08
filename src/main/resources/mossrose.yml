@@ -13,6 +13,11 @@ jobs:
     main: com.jiuxian.jobs.job.SimpleExampleJob
   - id: 3
     group: test
-    cron: 0/20 * * * * ?
+    cron: 0/15 * * * * ?
     main: com.jiuxian.jobs.job.DistributedExampleJob
     description: 分布式任务示例
+  - id: 4
+    group: test
+    cron: 0/20 * * * * ?
+    main: com.jiuxian.jobs.job.StreamingExampleJob
+    description: 分布式流式任务示例
