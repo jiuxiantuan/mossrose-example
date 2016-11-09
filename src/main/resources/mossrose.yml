@@ -3,20 +3,16 @@
 cluster:
   name: mossrose-example
 jobs:
-  - id: 1
+  - id: SimpleExampleJob
     group: test
     cron: 0/5 * * * * ?
     main: com.jiuxian.jobs.job.SimpleExampleJob
-  - id: 2
-    group: test
-    cron: 0/10 * * * * ?
-    main: com.jiuxian.jobs.job.SimpleExampleJob
-  - id: 3
+  - id: DistributedExampleJob
     group: test
     cron: 0/15 * * * * ?
     main: com.jiuxian.jobs.job.DistributedExampleJob
     description: 分布式任务示例
-  - id: 4
+  - id: StreamingExampleJob
     group: test
     cron: 0/20 * * * * ?
     main: com.jiuxian.jobs.job.StreamingExampleJob

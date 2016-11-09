@@ -38,6 +38,12 @@ public class StreamingExampleJob implements StreamingJob<String> {
 
 			@Override
 			public void execute(String item) {
+				if ("Tuesday".equals(item)) {
+					try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e) {
+					}
+				}
 				LOGGER.info("StreamingJob: " + item);
 			}
 		};
