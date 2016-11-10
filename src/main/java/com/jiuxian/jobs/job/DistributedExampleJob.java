@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Splitter;
+import com.jiuxian.jobs.bean.IBusinessBean;
+import com.jiuxian.jobs.util.SpringContextHolder;
 import com.jiuxian.mossrose.job.DistributedJob;
-
-import net.logstash.logback.argument.StructuredArguments;
 
 public class DistributedExampleJob implements DistributedJob<String> {
 
@@ -38,7 +38,7 @@ public class DistributedExampleJob implements DistributedJob<String> {
 						e.printStackTrace();
 					}
 				}
-				LOGGER.info("DistributedJob: {}", StructuredArguments.value("item", item));
+				LOGGER.info("DistributedJob: {}", SpringContextHolder.getBean(IBusinessBean.class).echo(item));
 			}
 		};
 	}
