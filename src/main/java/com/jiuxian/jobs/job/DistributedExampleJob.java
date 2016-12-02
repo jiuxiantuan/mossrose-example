@@ -4,15 +4,18 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.base.Splitter;
 import com.jiuxian.jobs.bean.IBusinessBean;
-import com.jiuxian.jobs.util.SpringContextHolder;
 import com.jiuxian.mossrose.job.DistributedJob;
 
 public class DistributedExampleJob implements DistributedJob<String> {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SimpleExampleJob.class);
+
+	@Autowired
+	private IBusinessBean businessBean;
 
 	@Override
 	public Slicer<String> slicer() {
@@ -38,7 +41,7 @@ public class DistributedExampleJob implements DistributedJob<String> {
 						e.printStackTrace();
 					}
 				}
-				LOGGER.info("DistributedJob: {}", SpringContextHolder.getBean(IBusinessBean.class).echo(item));
+				LOGGER.info("DistributedJob: {}", businessBean.echo(item));
 			}
 		};
 	}
