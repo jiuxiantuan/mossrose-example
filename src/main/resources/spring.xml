@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mossrose="https://jiuxiantuan.github.io/mossrose"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		https://jiuxiantuan.github.io/mossrose https://jiuxiantuan.github.io/mossrose/mossrose.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
 	<context:component-scan base-package="com.jiuxian.jobs" />
 
@@ -20,26 +22,17 @@
 		<constructor-arg name="node" value="mossrose" />
 	</bean>
 
-	<bean id="mossroseConfig" class="com.jiuxian.mossrose.config.MossroseConfigFactory" factory-method="fromClasspathYamlFile">
-		<constructor-arg value="#{mossroseProp['config.file']}"></constructor-arg>
-	</bean>
-
-	<bean id="mossroseProcess" class="com.jiuxian.mossrose.MossroseProcess">
-		<constructor-arg name="mossroseConfig" ref="mossroseConfig" />
-		<constructor-arg name="zks" value="#{configTookitProp['zk.address']}" />
-	</bean>
-
-	<bean class="com.jiuxian.mossrose.ui.RestMossroseUI">
-		<constructor-arg name="jobOperation">
-			<bean factory-bean="mossroseProcess" factory-method="getJobOperation" />
-		</constructor-arg>
-		<constructor-arg name="competitive">
-			<bean factory-bean="mossroseProcess" factory-method="getCompetitive" />
-		</constructor-arg>
-		<constructor-arg name="port" value="#{mossroseProp['mossrose-ui.port']}" />
-	</bean>
+	<mossrose:config>
+		<mossrose:cluster name="mossrose-example" />
+		<mossrose:jobs>
+			<mossrose:job id="SimpleExampleJob" cron="0/5 * * * * ?" main="com.jiuxian.jobs.job.SimpleExampleJob" group="example" />
+			<mossrose:job id="DistributedExampleJob" cron="0/15 * * * * ?" main="com.jiuxian.jobs.job.DistributedExampleJob" group="example" />
+			<mossrose:job id="StreamingExampleJob" cron="0/20 * * * * ?" main="com.jiuxian.jobs.job.StreamingExampleJob" group="example"
+				description="分布式流式任务示例" />
+		</mossrose:jobs>
+	</mossrose:config>
+	<mossrose:process zks="#{configTookitProp['zk.address']}" />
+	<mossrose:ui />
 
 	<bean class="com.jiuxian.jobs.bean.BusinessBean" />
-
-
 </beans>
