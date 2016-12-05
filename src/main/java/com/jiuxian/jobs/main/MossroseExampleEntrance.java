@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.jiuxian.mossrose.MossroseProcess;
-
 /**
  * Main entrance of mossrose
  * 
@@ -22,10 +20,7 @@ public class MossroseExampleEntrance {
 			context.registerShutdownHook();
 			context.start();
 
-			context.getBean(MossroseProcess.class).run();
-
 			LOGGER.info("mossrose jobs 启动成功");
-
 			Object lock = new Object();
 			synchronized (lock) {
 				try {
