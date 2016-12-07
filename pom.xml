@@ -11,7 +11,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
-		<mossrose-spring.version>1.0.0-RELEASE</mossrose-spring.version>
+		<mossrose-spring.version>1.0.1-RELEASE</mossrose-spring.version>
 	</properties>
 
 	<build>
