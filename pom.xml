@@ -4,15 +4,14 @@
 	<parent>
 		<groupId>com.jiuxian</groupId>
 		<artifactId>jiuxian-bom</artifactId>
-		<version>1.0.1-RELEASE</version>
+		<version>1.0.2-RELEASE</version>
 	</parent>
 	<groupId>com.jiuxian</groupId>
 	<artifactId>mossrose-example</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
-		<mossrose-spring.version>1.0.2-RELEASE</mossrose-spring.version>
-		<mossrose.version>1.4.2-RELEASE</mossrose.version>
+		<mossrose.version>2.0.0-RELEASE</mossrose.version>
 	</properties>
 
 	<build>
@@ -109,11 +108,6 @@
 		<dependency>
 			<groupId>com.dangdang</groupId>
 			<artifactId>config-toolkit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.jiuxian</groupId>
-			<artifactId>mossrose-spring</artifactId>
-			<version>${mossrose-spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jiuxian</groupId>

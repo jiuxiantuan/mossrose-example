@@ -38,6 +38,6 @@
 		</mossrose:jobs>
 	</mossrose:config>
 	<mossrose:process zks="#{configTookitProp['zk.address']}" />
-	<mossrose:ui />
+	<!-- <mossrose:ui port="7759" /> -->
 
 </beans>
