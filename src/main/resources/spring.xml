@@ -29,7 +29,7 @@
 
 	<mossrose:springholder />
 	<mossrose:config>
-		<mossrose:cluster name="mossrose-example1" />
+		<mossrose:cluster name="mossrose-example" />
 		<mossrose:jobs>
 			<mossrose:job id="SimpleExampleJob" cron="0/5 * * * * ?" job-bean-name="simpleExampleJob" group="example" />
 			<mossrose:job id="DistributedExampleJob" cron="0/15 * * * * ?" job-bean-name="distributedExampleJob" group="example" />
