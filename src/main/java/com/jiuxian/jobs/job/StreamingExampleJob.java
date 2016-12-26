@@ -23,7 +23,7 @@ public class StreamingExampleJob implements StreamingJob<String> {
 
 			@Override
 			public boolean hasNext() {
-				return index < list.size() - 1;
+				return index < list.size();
 			}
 
 			@Override
