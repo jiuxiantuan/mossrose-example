@@ -29,7 +29,7 @@
 
 	<mossrose:springholder />
 	<mossrose:config>
-		<mossrose:cluster name="mossrose-example" />
+		<mossrose:cluster name="mossrose-example1" />
 		<mossrose:jobs>
 			<mossrose:job id="SimpleExampleJob" cron="0/5 * * * * ?" job-bean-name="simpleExampleJob" group="example" />
 			<mossrose:job id="DistributedExampleJob" cron="0/15 * * * * ?" job-bean-name="distributedExampleJob" group="example" />
@@ -38,6 +38,6 @@
 		</mossrose:jobs>
 	</mossrose:config>
 	<mossrose:process zks="#{configTookitProp['zk.address']}" />
-	<!-- <mossrose:ui port="7759" /> -->
+	<mossrose:ui port="7758" />
 
 </beans>
