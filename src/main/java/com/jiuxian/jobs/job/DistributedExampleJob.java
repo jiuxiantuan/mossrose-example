@@ -2,6 +2,7 @@ package com.jiuxian.jobs.job;
 
 import java.util.List;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,9 @@ public class DistributedExampleJob implements DistributedJob<String> {
 
 			@Override
 			public void execute(String item) {
-				if ("D".equals(item)) {
-					try {
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+				try {
+					Thread.sleep(RandomUtils.nextInt(1, 5) * 1000);
+				} catch (InterruptedException e) {
 				}
 				LOGGER.info("DistributedJob: {}", businessBean.echo(item));
 			}

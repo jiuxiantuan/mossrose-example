@@ -2,6 +2,7 @@ package com.jiuxian.jobs.job;
 
 import java.util.List;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,11 +39,9 @@ public class StreamingExampleJob implements StreamingJob<String> {
 
 			@Override
 			public void execute(String item) {
-				if ("Tuesday".equals(item)) {
-					try {
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-					}
+				try {
+					Thread.sleep(RandomUtils.nextInt(1, 5) * 1000);
+				} catch (InterruptedException e) {
 				}
 				LOGGER.info("StreamingJob: " + item);
 			}
