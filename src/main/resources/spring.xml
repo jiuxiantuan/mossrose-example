@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:c="http://www.springframework.org/schema/c" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:mossrose="https://jiuxiantuan.github.io/mossrose" xmlns:config="https://crnlmchina.github.io/config"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
@@ -17,6 +16,7 @@
 	<bean id="simpleExampleJob" class="com.jiuxian.jobs.job.SimpleExampleJob" />
 	<bean id="distributedExampleJob" class="com.jiuxian.jobs.job.DistributedExampleJob" />
 	<bean id="streamingExampleJob" class="com.jiuxian.jobs.job.StreamingExampleJob" />
+	<bean id="mapReduceExampleJob" class="com.jiuxian.jobs.job.MapReduceExampleJob" />
 
 	<mossrose:springholder />
 	<mossrose:config>
@@ -24,8 +24,8 @@
 		<mossrose:jobs>
 			<mossrose:job id="SimpleExampleJob" cron="0/5 * * * * ?" job-bean-name="simpleExampleJob" group="example" />
 			<mossrose:job id="DistributedExampleJob" cron="0/15 * * * * ?" job-bean-name="distributedExampleJob" group="example" />
-			<mossrose:job id="StreamingExampleJob" cron="0/20 * * * * ?" job-bean-name="streamingExampleJob" group="example"
-				description="分布式流式任务示例" />
+			<mossrose:job id="StreamingExampleJob" cron="0/20 * * * * ?" job-bean-name="streamingExampleJob" group="example" description="分布式流式任务示例" />
+			<mossrose:job id="MapReduceExampleJob" cron="0/20 * * * * ?" job-bean-name="mapReduceExampleJob" group="example" description="MAP/REDUCE任务示例" />
 		</mossrose:jobs>
 	</mossrose:config>
 	<mossrose:process zks="#{mossroseProp['zk.address']}" />
