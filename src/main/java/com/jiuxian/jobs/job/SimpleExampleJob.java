@@ -16,6 +16,7 @@ public class SimpleExampleJob implements SimpleJob {
 
 			@Override
 			public void execute() {
+				System.out.println(this);
 				try {
 					Thread.sleep(RandomUtils.nextInt(1, 5) * 1000);
 				} catch (InterruptedException e) {
