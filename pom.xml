@@ -11,7 +11,9 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
-		<mossrose.version>2.0.6-RELEASE</mossrose.version>
+		<mossrose.version>2.1.0-RELEASE</mossrose.version>
+		<curator.version>2.9.1</curator.version>
+		<ignite.version>1.9.0</ignite.version>
 	</properties>
 
 	<build>
