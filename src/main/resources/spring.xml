@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
-	xmlns:mossrose="https://jiuxiantuan.github.io/mossrose" xmlns:config="https://crnlmchina.github.io/config"
+	xmlns:mossrose="https://jiuxiantuan.github.io/mossrose"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
-		https://crnlmchina.github.io/config https://crnlmchina.github.io/config/config.xsd
 		https://jiuxiantuan.github.io/mossrose https://jiuxiantuan.github.io/mossrose/mossrose.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
