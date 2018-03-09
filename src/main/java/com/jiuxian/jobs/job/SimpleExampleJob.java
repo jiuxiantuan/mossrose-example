@@ -1,10 +1,8 @@
 package com.jiuxian.jobs.job;
 
-import org.apache.commons.lang3.RandomUtils;
+import com.jiuxian.mossrose.job.SimpleJob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.jiuxian.mossrose.job.SimpleJob;
 
 public class SimpleExampleJob implements SimpleJob {
 
@@ -16,11 +14,6 @@ public class SimpleExampleJob implements SimpleJob {
 
 			@Override
 			public void execute() {
-				System.out.println(this);
-				try {
-					Thread.sleep(10 * 1000);
-				} catch (InterruptedException e) {
-				}
 				LOGGER.info("SimpleJob");
 			}
 		};
