@@ -19,7 +19,7 @@
 
 	<mossrose:springholder />
 	<mossrose:config>
-		<mossrose:cluster name="mossrose-example2" discovery-zk="#{mossroseProp['zk.address']}" />
+		<mossrose:cluster name="example" discovery-zk="#{mossroseProp['zk.address']}" />
 		<mossrose:jobs>
 			<mossrose:job id="SimpleExampleJob" cron="0 * * * * ?" job-bean-name="simpleExampleJob" group="example" threads="1" />
 			<mossrose:job id="DistributedExampleJob" cron="0/15 * * * * ?" job-bean-name="distributedExampleJob" group="example" threads="10" />
